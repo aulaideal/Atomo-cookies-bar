@@ -1,0 +1,235 @@
+name: Cookies Bar
+type: atom
+
+configuration:
+  caching:
+    type: static
+
+form:
+  fields:
+
+    enabled:
+      type: enable.enable
+      label: Publicado
+      description: 'Habilitar o deshabilitar esta partícula. '
+      default: true
+
+    tabs:
+      type: container.tabs
+      fields:
+        tab1:
+          label: 'Encabezado'
+          fields:
+            heading:
+              type: input.text
+              label: Encabezado
+              description: 'Define un encabezado para el mensaje'
+              placeholder: 'USO DE COOKIES'
+
+            headingAlign:
+              type: select.select
+              label: Alineación
+              description: 'Define la alineación del encabezado.'
+              default: center
+              options:
+                left: Izquierda
+                center: Centrado
+                right: Derecha
+
+            headingFontSize:
+              type: input.text
+              label: Tamaño del texto
+              description: 'Define un tamaño para el encabezado del mensaje.'
+              placeholder: '1.2rem'
+        tab2:
+          label: 'Mensaje'
+          fields:
+            message:
+              type: textarea.textarea
+              label: Contenido
+              description: 'Define un texto para el mensaje.'
+
+            messageAlign:
+              type: select.select
+              label: Alineación
+              description: 'Define la alineación del mensaje.'
+              default: left
+              options:
+                left: Izquierda
+                center: Centrado
+                right: Derecha
+
+        tab3:
+          label: 'Diseño'
+          fields:
+            position:
+              type: input.radios
+              label: Posición
+              description: 'Define la ubicacion del anuncio o mensaje.'
+              default: top
+              options:
+                top: Arriba
+                bottom: Abajo
+                bottom-left: Abajo - Izquierda
+                bottom-right: Abajo - Derecha
+
+            layout:
+              type: input.radios
+              label: Diseño
+              description: 'Define el diseño del contenido del mensaje.'
+              default: vertical
+              options:        
+                vertical: Vertical
+                horizontal: Horizontal
+
+            background:
+              type: input.colorpicker
+              label: Color de fondo
+              description: 'Defina un color de fondo para el mensaje.'
+              default: '#212121'
+
+            bannerCorner:
+              type: input.text
+              label: Esquinas redondeadas
+              description: 'Define el border-radius para elo anuncio.'
+              placeholder: '0'
+
+            margin:
+              type: input.text
+              label: Margen
+              description: 'Define un separación para el mensaje.'
+              placeholder: '0'
+
+            spacing:
+              type: input.text
+              label: Espaciado interno
+              description: 'Define un espaciado interno para el mensaje.'
+              placeholder: '12px 30px'
+
+            slide:
+              type: enable.enable
+              label: Defecto "Slide"
+              description: 'Habilitar o deshabilitar el efecto de desplazamiento cuando el anuncio se muestra o se oculta.'
+              default: true
+
+            fade:
+              type: enable.enable
+              label: Defecto "Fade"
+              description: 'Habilitar o deshabilitar el efecto de desvanecimiento progresivo cuando el anuncio se muestra o se oculta.'
+              default: true
+
+        tab4:
+          label: 'Texto'
+          fields:
+
+            color:
+              type: input.colorpicker
+              label: Color del texto
+              description: 'Defina el color del texto del contenido del mensaje.'
+              default: '#ffffff'
+
+            linkColor:
+              type: input.colorpicker
+              label: Color de los enlaces
+              description: 'Defina el color para los enlaces del mensaje.'
+              default: '#1b98ff'
+
+            fontSize:
+              type: input.text
+              label: Tamaño del texto
+              description: 'Define un tamaño del texto para el mensaje.'
+              placeholder: '.7rem'
+
+        tab5:
+          label: 'Botones'
+          fields:
+            agreeBtnText:
+              type: input.text
+              label: Texto "Aceptar"
+              description: 'Define el texto para el botón aceptar.'
+              placeholder: 'Ejem: OK'
+
+            agreeBtnBg:
+              type: input.colorpicker
+              label: Color botón aceptar
+              description: 'Defina el color para el fondo del botón aceptar.'
+              default: '#7daf3b'
+
+            agreeBtnColor:
+              type: input.colorpicker
+              label: Color texto Aceptar
+              description: 'Defina el color para el texto del botón aceptar.'
+              default: '#ffffff'
+
+            policyBtnText:
+              type: input.text
+              label: Texto "Leer más"
+              description: 'Define el texto para el botón "Leer más".'
+              placeholder: 'Ejem: Más información'
+
+            policyBtnBg:
+              type: input.colorpicker
+              label: Color botón "Leer más"
+              description: 'Defina el color para el fondo del botón "Leer más".'
+              default: '#7b8a8b'
+
+            policyBtnColor:
+              type: input.colorpicker
+              label: Color texto "Leer más"
+              description: 'Defina el color para el texto del botón "Leer más".'
+              default: '#ffffff'
+
+            policyLink:
+              type: input.text
+              label: URL botón "Leer más"
+              description: 'Ingrese la URL para el botón "Leer más"'
+              placeholder: 'Ejem: http://'
+
+            buttonsAlign:
+              type: select.select
+              label: Alineación de botones
+              description: 'Define la alineación horizontal de los botones.'
+              default: center
+              options:
+                left: Izquierda
+                center: Centrado
+                right: Derecha
+
+            buttonCorner:
+              type: input.text
+              label: Borde de botones
+              description: 'Define el radio para las esquinas de los botones'
+              placeholder: 'Ejem: 3px'
+
+        tab6:
+          label: 'Avanzado'
+          fields:
+            scrollClose:
+              type: enable.enable
+              label: Ocultar con Scroll
+              description: 'Si esta habilitada esta opción el mensaje de ocultará cuando el usuario haga Scroll en la página.'
+              default: false
+
+            innerClass:
+              type: input.selectize
+              label: Clases CSS
+              description: 'inserta tus propias clases CSS'
+
+            mode:
+              type: enable.enable
+              label: Modo depuración
+              description: 'Si esta habilitada esta opción siempre se mostrara el mensaje.'
+              default: false
+
+
+
+    
+
+
+
+    
+
+
+
+
+

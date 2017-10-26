@@ -1,0 +1,235 @@
+/*!
+* StoCookie - cookie law notification and custom alerts
+*
+* Copyright 2016 Nicola Franchini
+* http://www.veno.es/stocookie
+*
+* Licence: http://codecanyon.net/wiki/support/legal-terms/licensing-terms/
+*/
+.stocookie-message {
+  display: none; }
+
+.biscotto, .biscotto *,
+.biscotto:before, .biscotto *:before,
+.biscotto:after, .biscotto *:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.biscotto {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: inherit;
+  font-size: .7rem;
+  z-index: 99998;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.biscotto.sc-fade {
+  opacity: 0; }
+
+.sc-animate {
+  -webkit-transition: all 500ms;
+  transition: all 500ms; }
+
+.biscotto.sc-fade.on {
+  opacity: 1; }
+
+.biscotto.sc-top {
+  top: 0; }
+
+.biscotto.sc-bottom {
+  bottom: 0; }
+
+.biscotto.sc-bottom-left,
+.biscotto.sc-bottom-right {
+  width: 25rem; }
+
+.biscotto.sc-bottom-left {
+  left: 1rem;
+  bottom: 1rem; }
+
+.biscotto.sc-bottom-right {
+  right: 1rem;
+  bottom: 1rem;
+  left: auto; }
+
+/*Position bottom-left*/
+.biscotto-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.biscotto-content.layout-horizontal {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.biscotto-content.layout-vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.biscotto-content.layout-horizontal .cook-message {
+  padding-right: .7rem; }
+
+.biscotto-content.layout-vertical .cook-message {
+  padding-bottom: .7rem; }
+
+.biscotto.sc-top.on,
+.biscotto.sc-top.sc-slide.on {
+  top: 0 !important; }
+
+.biscotto.sc-bottom.on,
+.biscotto.sc-bottom.sc-slide.on {
+  bottom: 0 !important; }
+
+.biscotto.sc-bottom-left.on,
+.biscotto.sc-bottom-left.sc-slide.on {
+  left: 1rem !important;
+  bottom: 1rem; }
+
+.biscotto.sc-bottom-right.on,
+.biscotto.sc-bottom-rightt.sc-slide.on {
+  right: 1rem !important;
+  left: auto;
+  bottom: 1rem; }
+
+.cook-message p {
+  margin: 0; }
+
+.admin-bar .biscotto {
+  max-height: 85%; }
+
+.biscotto.biscotto-full {
+  height: 100%; }
+
+.biscotto-inner {
+  max-height: 100%;
+  position: relative;
+  background: #fff;
+  color: #d4cece;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-box-shadow: 0 0 14px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 0 14px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.22);
+  height: 100%;
+  width: 100%;
+  margin: 0 auto; }
+
+.biscotto-content {
+  margin: 0 auto; }
+
+.biscotto .alignleft, .biscotto img.alignleft {
+  margin: 0.4rem 1rem 0.4rem 0; }
+
+.biscotto .alignright, .biscotto img.alignright {
+  margin: 0.4rem 0 0.4rem 1rem; }
+
+/** small close button**/
+.biscotto-heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0 0 .5rem 0; }
+
+/** small close button**/
+.biscotto-times {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  opacity: .9;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease; }
+
+.biscotto-times:hover {
+  opacity: 1; }
+
+.biscotto-times:after {
+  display: inline-block;
+  content: "\00d7"; }
+
+/** Agree and More info buttons */
+.biscotto-buttons {
+  white-space: nowrap; }
+
+.biscotto-btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 5px 12px;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.29);
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+  margin: 0;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.26);
+          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.26);
+  -webkit-transition: all 200ms;
+  transition: all 200ms; }
+
+.biscotto-btn:hover {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
+
+.biscotto-btn.close-biscotto {
+  margin-right: .4rem; }
+
+@media screen and (max-width: 48rem) {
+  .biscotto-content.layout-horizontal,
+  .biscotto-content.layout-vertical {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial; }
+
+  .biscotto-content.layout-horizontal .cook-message {
+    padding-right: 0;
+    padding-bottom: .7rem; }
+
+  .biscotto.sc-bottom-left,
+  .biscotto.sc-bottom-right {
+    width: 100%; }
+
+  .biscotto.sc-bottom-left {
+    left: 0;
+    bottom: 0; }
+
+  .biscotto.sc-bottom-right,
+  .biscotto.sc-bottom-right {
+    right: 0;
+    bottom: 0; }
+
+  .biscotto.sc-bottom-left.on,
+  .biscotto.sc-bottom-left.sc-slide.on {
+    left: 0 !important;
+    bottom: 0; }
+
+  .biscotto.sc-bottom-right.on,
+  .biscotto.sc-bottom-right.sc-slide.on {
+    right: 0 !important;
+    left: auto;
+    bottom: 0; } }
+@media screen and (max-width: 22rem) {
+  .biscotto-btn.close-biscotto,
+  .biscotto-btn.biscotto-btn-polity {
+    display: block;
+    margin: .3rem 0; } }

@@ -1,0 +1,100 @@
+{# cargando nuestro archivo stoCookie.css  #}
+{% do gantry.document.addStyle({href: url('gantry-theme://css/stoCookie.css'), type:'text/css'},0) %}
+
+{# cargando nuestro archivo stoCookie.min.js  #}
+{% do gantry.document.addScript(url('gantry-theme://js/stoCookie.min.js'), 0, 'footer') %}
+
+{% set script_stoCookie %}
+
+jQuery(document).ready(function($){
+        $('body').stoCookie({
+          {% if particle.heading %}        	
+          heading: '{{particle.heading}}',
+		  {% endif %}
+		  {% if particle.headingAlign!="center" %}		  
+	      headingAlign:'{{particle.headingAlign}}',
+		  {% endif %}
+		  {% if particle.headingFontSize %}
+	      headingFontSize: '{{particle.headingFontSize}}',
+	      {% endif %}
+		  {% if particle.message %}
+	      message: '{% spaceless %}{{particle.message|raw}}{% endspaceless %}',
+		  {% endif %}
+		  {% if particle.messageAlign!="left" %}
+	      messageAlign: '{{particle.messageAlign}}', 
+	      {% endif %}
+		  {% if particle.position!="top" %}
+	      position: '{{particle.position}}',
+	      {% endif %}
+		  {% if particle.layout!="vertical" %}
+	      layout: '{{particle.layout}}',
+ 		  {% endif %}
+		  {% if particle.background!="#212121" %}
+	      background: '{{particle.background}}',
+ 		  {% endif %}
+	      {% if particle.bannerCorner %}	      
+	      bannerCorner: '{{particle.bannerCorner}}',
+	      {% endif %}
+		  {% if particle.margin %}
+	      margin: '{{particle.margin}}',
+		  {% endif %}		  
+		  {% if particle.spacing and particle.spacing!="12px 30px" %}
+	      spacing: '{{particle.spacing}}',
+		  {% endif %}
+		  {% if particle.slide==false %}
+	      slide: false,
+	      {% endif %}
+		  {% if particle.fade==false %}
+	      fade: false,
+		  {% endif %}
+	      {% if particle.color!="#ffffff" %}
+	      color: '{{particle.color}}',
+	      {% endif %}
+		  {% if particle.linkColor!="#1b98ff" %}
+	      linkColor: '{{particle.linkColor}}',
+	      {% endif %}
+	      {% if particle.fontSize %}
+	      fontSize: '{{particle.fontSize}}',
+	      {% endif %}
+		  {% if particle.agreeBtnText %}
+	      agreeBtnText: '{{particle.agreeBtnText}}',
+	      {% endif %}
+	      {% if particle.agreeBtnBg!="#7daf3b" %}
+	      agreeBtnBg: '{{particle.agreeBtnBg}}',
+	      {% endif %}
+		  {% if particle.agreeBtnColor!="#ffffff" %}
+	      agreeBtnColor: '{{particle.agreeBtnColor}}',
+		  {% endif %}
+	      {% if particle.policyBtnText %}
+	      policyBtnText: '{{particle.policyBtnText}}',
+		  {% endif %}
+		  {% if particle.policyBtnBg!="#7b8a8b" %}
+	      policyBtnBg: '{{particle.policyBtnBg}}',
+		  {% endif %}
+	      {% if particle.policyBtnColor!="#ffffff" %}
+	      policyBtnColor: '{{particle.policyBtnColor}}',
+	      {% endif %}
+	      {% if particle.policyLink %}
+	      policyLink: '{{particle.policyLink}}',
+	      {% endif %}	      
+	      {% if particle.buttonsAlign!="center" %}
+	      buttonsAlign: '{{particle.buttonsAlign}}',
+	      {% endif %}
+	      {% if particle.buttonCorner and particle.buttonCorner!="3px" %}
+	      buttonCorner: '{{particle.buttonCorner}}',
+	      {% endif %}
+	      {% if particle.scrollClose!=false %}
+	      scrollClose: true,
+	      {% endif %}
+	      {% if particle.innerClass %}
+	      innerClass: '{{particle.innerClass}}',
+	      {% endif %}
+	      {% if particle.mode!=false %}
+	      mode: 'always'
+	      {% endif %}
+        });    
+      });
+
+{% endset %}
+
+{% do gantry.document.addInlineScript(script_stoCookie, 0,'footer') %}
